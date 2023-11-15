@@ -5,42 +5,42 @@ Interest in the use of autonomous flight vehicles for defense as well as commerc
 A variety of robust nonlinear control schemes have been presented in the literature that do not require the cancellation of all the nonlinearities. Backstepping is one such approach. Backstepping provides a novel way of recursively designing a controller by considering some of the states as a virtual control input. In this way, it simplifies the control design process for higher-order nonlinear systems such as aircraft. 
 
 # Aircraft Model 
-![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Aircraft%20Dynamics.jpg?raw=true)
+![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Aircraft%20Dynamics.jpg?raw=true)
 * Translational Kinematic Equations 
   
   The translational kinematics equations are given below: 
 
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Translational%20Kinematic%20Equations.jpg)
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Translational%20Kinematic%20Equations.jpg)
   
   where H is flight altitude, Y is lateral deviation wrt the runway, X is the horizontal displacement; u,v, and w are components of the velocity vector of UAV; phi, theta, psi are attitude angles (roll, pitch, and yaw respectively). 
 * Translational Dynamic Equations
 
   The translational dynamic equations describing the components of the velocity relative to the UAV-based body-fixed reference frame are: 
   
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Translational%20Dynamics%20Equations.jpg)
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Translational%20Dynamics%20Equations.jpg)
   
   where p,q,r are the roll, pitch, and yaw angular rates; g is gravitational constant, m is the mass of the UAV, Va is velocity magnitude of the UAV (Va = sqrt(u^2 + v^2 + w^2)), rho is air density (depending on altitude), S is wing area, b is wing span, c is aerodynamic mean chord; delt is throttle input (varying between 0 and 1), delr is rudder deflection, dele is elevator deflection.   
 * Rotational Kinematic Equations 
 
   The rotational kinematic equations of the UAV are as follows: 
   
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Rotational%20Kinematics%20Equation.jpg)
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Rotational%20Kinematics%20Equation.jpg)
   
 * Rotational Dynamic Equations
   
   The rotational dynamics equations describing roll, pitch, and yaw angular rates wrt UAV-based body-fixed frame reference frame are:
   
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Rotational%20Dynamics%20Equation.jpg)
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Rotational%20Dynamics%20Equation.jpg)
   
 * Relationship between Components of the Velocity vector, Angle of attack, and Side Slip angles
 
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Relationship%20btn%20V%2C%20alpha%20and%20Beta.jpg)
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Relationship%20btn%20V%2C%20alpha%20and%20Beta.jpg)
   
 * Flight Path Angle Equation 
 
-  ![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Flight%20Path%20Angle%20Eqn.jpg)  
+  ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Flight%20Path%20Angle%20Eqn.jpg)  
   
-**Note:** Only the important equations have been presented here. The equations for the aerodynamic constants can be found easily in any literature. I've used the equation for them from the book [Small Unmanned Aircraft (2012).pdf](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/files/9485598/Small.Unmanned.Aircraft.2012.pdf) by Randal W. Beard and Timothy W. McLain. 
+**Note:** Only the important equations have been presented here. The equations for the aerodynamic constants can be found easily in any literature. I've used the equation for them from the book [Small Unmanned Aircraft (2012).pdf](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/files/9485598/Small.Unmanned.Aircraft.2012.pdf) by Randal W. Beard and Timothy W. McLain. 
 
 
 # Controller & Observer Design 
@@ -48,7 +48,7 @@ The motion of the UAV is now divided into two parts while designing the controll
 
 The following image is a schematic of the controller and observer design for the UAV: 
 
-![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Block%20Diagram.jpg)
+![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Block%20Diagram.jpg)
 * Lateral-Directional Controller
 
   Assumptions that we've taken while designing this controller: 
@@ -79,7 +79,7 @@ The UAV was tested for a 180-degree horizontal turn maneuver. It was flying init
 
 For running the simulation model: 
 
-![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Model%20Running%20Instructions.jpg)
+![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Model%20Running%20Instructions.jpg)
 
 * Download the "MATLAB & Simulink" Folder onto your computer. 
 * Run the Trim_sym_main.m file first. 
@@ -89,11 +89,11 @@ For running the simulation model:
 
 The complete simulation model was developed using MATLAB & Simulink as shown in the image given below: 
 
-![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Simulink%20Model.jpg)
+![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Simulink%20Model.jpg)
 
 The following image presents the simulation results for a 180-degree horizontal turn maneuver for the UAV. While performing the maneuver, a drop of 0.0001 meters in altitude and 0.6m/s in Velocity were observed. The UAV was successfully able to complete the maneuver with minimal errors, even in the presence of wind disturbance which proved the high performance and robustness of the controllers. 
 
-![alt text](https://github.com/tusharsial/Flight-Dynamics-Controls-UAV-/blob/main/Images/Simulation%20Results.jpg)
+![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Simulation%20Results.jpg)
 
 # Simulation Video 
 This video shows the simulation of the UAV performing a 180-degree horizontal turn maneuver. 
