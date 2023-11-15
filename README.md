@@ -72,7 +72,7 @@ The following image is a schematic of the controller and observer design for the
   **Control Inputs:** delT (Throttle i/p - velocity controller) and delE (Elevator deflection - Flight path angle controller).
   
 **Note:** For the equations of the Controllers, you can refer to the following presentation. 
-https://docs.google.com/presentation/d/1c6U61U5BCYlcwXmJR-q57A_kSxaiEpe3V4xSZbWlwo0/edit#slide=id.g108a4b7ca6c_1_86
+https://docs.google.com/presentation/d/1p6DNbIPgsgHR5Nx1-jgmpb2Lt2mg_AeAi7XRikEwlL8/edit#slide=id.g108a4b7ca6c_1_86
 
 # Simulation Results 
 The UAV was tested for a 180-degree horizontal turn maneuver. It was flying initially at a height of 1000 meters with an initial speed of 16.07m/s. The sideslip angle and Flight path angle were 0 initially. Wind disturbance has also been added as an external disturbance while designing the model. For simulation, three types of winds have been modeled - wind shears, atmospheric disturbances (described by the Dryden Spectral model - Wind turbulence), and wind gusts. 
@@ -91,7 +91,7 @@ The complete simulation model was developed using MATLAB & Simulink as shown in 
 
 ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Simulink%20Model.jpg)
 
-The following image presents the simulation results for a 180-degree horizontal turn maneuver for the UAV. While performing the maneuver, a drop of 0.0001 meters in altitude and 0.6m/s in Velocity were observed. The UAV was successfully able to complete the maneuver with minimal errors, even in the presence of wind disturbance which proved the high performance and robustness of the controllers. 
+The following image presents the simulation results for a 180-degree horizontal turn maneuver for the UAV. While performing the maneuver, a drop of 0.0001 meters in altitude and 0.6m/s in Velocity was observed. The UAV was successfully able to complete the maneuver with minimal errors, even in the presence of wind disturbance which proved the high performance and robustness of the controllers. 
 
 ![alt text](https://github.com/Karthik-Rajgopal/UAV-Backstepping-Control/blob/main/Images/Simulation%20Results.jpg)
 
